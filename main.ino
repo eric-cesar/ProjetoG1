@@ -78,13 +78,13 @@ void animate(short order, CRGB color)
 
     for (short i = 0; i <= idx; i++)
     {
-        leds[ledsIdx][i] = color;
-
         if (i > 0)
         {
             leds[ledsIdx][i - 1] = temp;
             temp = leds[ledsIdx][i];
         }
+        leds[ledsIdx][i] = color;
+        
         delay(100);
         FastLED.show();
     }
